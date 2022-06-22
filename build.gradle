@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'org.gretty' version '3.0.7'
+    id 'war'
+}
+
+group 'org.example'
+version '2.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+   }
+
+dependencies {
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    compileOnly group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.3'
+    implementation group: 'javax.servlet.jsp.jstl', name: 'jstl-api', version: '1.2'
+}
+
+gretty {
+    httpPort = 8080
+    contextPath = '/'
+}
